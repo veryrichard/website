@@ -1,0 +1,65 @@
+@font-face {
+    font-family: PWChildren;
+    src: url("PWChildren.ttf") format("truetype");
+}
+.hero-message{
+    color:  #ADDDC9 !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+#genixiscoming{
+    color: #5ae5cf;
+}
+.home-link-color{
+    color: rgba(17, 46, 40, 0.9) !important;
+}
+.why-blockchain{
+    color: black !important;
+}
+.header-link{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+}
+.footer-link, .header-link{
+    color: turquoise !important;
+
+}
+#what-is-genix{
+    background: linear-gradient(to right bottom, rgba(1, 44, 50, 0.9), rgba(0, 58, 62, 0.9), rgba(0, 73, 73, 0.9), rgba(5, 88, 82, 0.9), rgba(22, 104, 90, 0.9) ),  url(../images/gnxbg.svg);
+}
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #fold1{
+            min-height: : 100%;
+            background: linear-gradient(to left bottom, rgba(0, 4, 3, 0.9),  rgba(14, 28, 25, 0.9), rgba(17, 46, 40, 0.9), rgba(18, 65, 57, 0.9),
+            rgba(17, 86, 74, 0.9), rgba(22, 104, 90, 0.9), rgba(28, 122, 106, 0.9), rgba(33, 141, 123, 0.9), rgba(48, 162, 143, 0.9),
+            rgba(62, 184, 164, 0.9), rgba(76, 206, 185, 0.9), rgba(90, 229, 207, 0.9) ), url(../images/back1366_only_pattern2.png);
+            -webkit-background-size: cover; 
+            -moz-background-size: cover; 
+            -o-background-size: cover;         } 
+    } 
+    
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #fold1{
+            min-height: : 100%;
+            background: linear-gradient(to left bottom, rgba(0, 4, 3, 0.9),  rgba(14, 28, 25, 0.9), rgba(17, 46, 40, 0.9), rgba(18, 65, 57, 0.9),
+            rgba(17, 86, 74, 0.9), rgba(22, 104, 90, 0.9), rgba(28, 122, 106, 0.9), rgba(33, 141, 123, 0.9), rgba(48, 162, 143, 0.9),
+            rgba(62, 184, 164, 0.9), rgba(76, 206, 185, 0.9), rgba(90, 229, 207, 0.9) ), url(../images/back1366_only_pattern2.png);
+            -webkit-background-size: cover; 
+            -moz-background-size: cover; 
+            -o-background-size: cover; 
+        } 
+    } 
+    
+  
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #fold1{
+            min-height: : 100%;
+            background: linear-gradient(to left bottom, rgba(0, 4, 3, 0.9),  rgba(14, 28, 25, 0.9), rgba(17, 46, 40, 0.9), rgba(18, 65, 57, 0.9),
+            rgba(17, 86, 74, 0.9), rgba(22, 104, 90, 0.9), rgba(28, 122, 106, 0.9), rgba(33, 141, 123, 0.9), rgba(48, 162, 143, 0.9),
+            rgba(62, 184, 164, 0.9), rgba(76, 206, 185, 0.9), rgba(90, 229, 207, 0.9) ), url(../images/back1366_only_pattern.svg);
+            background-size: cover; 
+        } 
+      
+        
+    } 

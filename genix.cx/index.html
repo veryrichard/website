@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Genix Coming Soon...</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/uikit-icons.min.js"></script>
+    <link rel="preload" href="https://getuikit.com/fonts/ProximaNova-Light-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="stylesheet" type="text/css" href="fonts.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+    <div id="fold1" class="uk-section-primary tm-section-texture">
+        <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky">
+            <div class="uk-container uk-container-expand">
+                <nav class="uk-navbar">
+                    <div class="uk-navbar-center" <a href="/" class="uk-navbar-item uk-logo">
+
+                        <img class="header-link"
+                            src="https://cdn.discordapp.com/attachments/541918504669020161/556207790234927129/GNX_Logo_Design.png"
+                            width="66" height="60" uk-svg>
+
+                        </a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+        <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
+        <div id="sectionDiv" uk-height-viewport="offset-top: true; offset-bottom: true"
+            class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center"
+            style="min-height: calc((100vh - 80px) - 124px);">
+            <div class="uk-width-1-1">
+                <div class="uk-container">
+
+                    <h1><a target="_blank" href="https://twitter.com/hashtag/Genixiscoming?src=hash" id="genixiscoming"
+                            href="twitter.com">#Genixiscoming</a></h1>
+                            <p style="min-width: 100% !important;" style="color:turquoise" id="demo"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-section-small">
+            <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
+                <ul uk-margin="" class=" uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
+
+                    <li>
+                        <a href="https://discord.gg/Rf63tyW" class="uk-text-capitalize" href="">
+
+                            Discord</a>
+                    </li>
+                    <li>
+                        <a href=https://twitter.com/GenixEcosystem/" class="uk-text-capitalize">
+                            Twitter
+                        </a>
+                    </li>
+                    <li class=" uk-margin-small-top uk-first-column">
+                        <a href="https://blockcrushers.xyz" class="uk-text-capitalize" href="">
+                            Blockcrushers</a>
+                    </li>
+                    <li class=" uk-margin-small-top uk-first-column">
+                        <a href="privacypolicy.html" class="uk-text-capitalize" href="">
+                            Privacy Policy</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</body>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("4 April 2019, 06:00:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get todays date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Genix is Here!";
+      }
+    }, 1000);
+    </script>
+</html>
