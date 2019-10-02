@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <title>Genix Coming Soon...</title>
+    <title>Genix Platform</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/uikit.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/ico" href="assets/images/logo/favicon.ico">
     <script src="assets/js/uikit.min.js"></script>
     <script src="assets/js/uikit-icons.min.js"></script>
     <link rel="preload" href="https://getuikit.com/fonts/ProximaNova-Light-webfont.woff2" as="font" type="font/woff2"
@@ -15,109 +16,894 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
+        $(function () {
+            $(document).scroll(function () {
+                // hide nav after scrolling past certain point, in this case about 60 to 70% of the 
+                // above-the-fold position
+                var $myNav = $(".uk-navbar");
+                var $toTop = $("#to-top");
+                var $windowWidth = $("html").outerWidth(true);
 
+                if ($windowWidth < 1600) {
+                    var $sectionHeight = $("#fold1").outerHeight() * 1.33;
+                } else {
+                    var $sectionHeight = $("#fold1").outerHeight() * 1.19;
+                }
+
+                $myNav.toggleClass('uk-hidden', $(this).scrollTop() > $sectionHeight * 0.6);
+                $toTop.toggleClass('uk-hidden', $(this).scrollTop() < $sectionHeight * 1.5);
+            });
+        });
     </script>
 
 </head>
 
 <body>
-
+    <!--  <div id="to-top" style="width: 15px; height: 15px; border-radius: 50%;"
+        class="uk-position-bottom-right uk-overlay uk-overlay-default uk-position-fixed uk-text-center uk-text-middle">
+        <a class="uk-text-middle" href="#" uk-scroll><span class="uk-icon-arrow"></span>Top</a></div>
+-->
 
 
 
     <div id="fold1" class="uk-section-primary tm-section-texture">
         <div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-navbar-transparent uk-sticky">
-            <div class="uk-container uk-container-expand">
-                <nav class="uk-navbar">
-                    <div class="uk-navbar-center" <a href="/" class="uk-navbar-item uk-logo">
+            <div class="uk-container">
 
-                        <img class="header-link"
-                            src="https://cdn.discordapp.com/attachments/541918504669020161/556207790234927129/GNX_Logo_Design.png"
-                            width="66" height="60" uk-svg>
+                <nav class="uk-navbar">
+                    <div class="uk-navbar-left">
+                        <a href="/" class="uk-navbar-item uk-logo">
+
+                            <img class="header-link"
+                                src="https://cdn.discordapp.com/attachments/541918504669020161/556207790234927129/GNX_Logo_Design.png"
+                                width="66" height="60" uk-svg>
 
                         </a>
                     </div>
+                    <div class="uk-navbar-right ">
+                        <ul class="uk-navbar-nav uk-visible@m">
 
+                            <li>
+                                <a class="header-link" uk-scroll href="#what-is-genix">About</a>
+                            </li>
+                            <li>
+                                <a class="header-link" uk-scroll href="#why-blockchain">Genix Blockchain</a>
+                            </li>
+                            <li>
+                                <a class="header-link" uk-scroll href="#wallets">Wallets</a>
+                            </li>
+                            <li>
+                                <a class="header-link" href="assets/lightpaper.pdf">Lightpaper</a>
+                            </li>
+                            <li>
+                                <a class="header-link" href="http://explorer.genix.cx">Block Explorer</a>
+                            </li>
+                        </ul>
+                        <!--Off Canvas Toggle-->
+                        <a uk-navbar-toggle-icon="" href="#offcanvas" uk-toggle=""
+                            class="uk-navbar-toggle uk-hidden@m uk-navbar-toggle-icon uk-icon header-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="9" width="20" height="2"></rect>
+                                <rect y="3" width="20" height="2"></rect>
+                                <rect y="15" width="20" height="2"></rect>
+                            </svg>
+                        </a>
+                    </div>
                 </nav>
             </div>
         </div>
-        <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
-        <div id="sectionDiv" uk-height-viewport="offset-top: true; offset-bottom: true"
-            class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center"
-            style="min-height: calc((100vh - 80px) - 124px);">
+        <div style="padding-bottom: 120px; min-height: calc((100vh - 80px) - 124px);"
+            uk-height-viewport="offset-top: true; offset-bottom: true"
+            class="uk-section uk-section-small uk-flex uk-flex-middle">
             <div class="uk-width-1-1">
                 <div class="uk-container">
 
-                    <h1><a target="_blank" href="https://twitter.com/hashtag/Genixiscoming?src=hash" id="genixiscoming"
-                            href="twitter.com">#Genixiscoming</a></h1>
-                            <p style="min-width: 100% !important;" style="color:turquoise" id="demo"></p>
+                    <div class="uk-child-width-1-1@s uk-child-width-1-1@m" uk-grid>
+
+                        <div class="uk-text-center">
+                            <!--<img src="assets/images/logo/genix.png" width="60" height="60">-->
+                            <h1 class="hero-message">
+
+                                Genix<br>
+                                is reclaiming<br>
+                                our planet by bringing<br>
+                                back our trees through <br>
+                                reforestation
+
+                            </h1>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="uk-section-small">
-            <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
-                <ul uk-margin="" class=" uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
 
-                    <li>
-                        <a href="https://discord.gg/Rf63tyW" class="uk-text-capitalize" href="">
+    <div id="what-is-genix" class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div class="uk-section uk-text-center">
+            <div class="uk-section uk-container">
+                <div class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-3@m" uk-grid>
+                    <div>
+                        <h3 class=" uk-text-justify" style="color: turquoise">Genix is built on the belief that everyone
+                            can and should
+                            protect the environment.
+                        </h3>
+                    </div>
+                    <div>
 
-                            Discord</a>
+                        <img src="https://cdn.discordapp.com/attachments/541918504669020161/556207790234927129/GNX_Logo_Design.png"
+                            width="132" height="120">
+
+
+                    </div>
+
+                    <div>
+                        <h3 class=" uk-text-justify" style="color: turquoise">
+                            The borderless nature of the blockchain furthers our mission. Reforestation just got even
+                            more global!
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="fold2" style="background-color:#ADDDC9;" uk-height-viewport="expand: true"
+        class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div uk-height-viewport="offset-top: true; offset-bottom: true" class="uk-section uk-text-center"
+            style="min-height: calc((100vh - 80px) - 124px);">
+            <div class="uk-container">
+                <h1 style="color: green" class="uk-heading-line uk-text-center"><span>The Genix Reason</span></h1>
+
+                <div style="margin-top: 70px" class="uk-grid-small uk-child-width-1-1@s uk-child-width-1-3@m" uk-grid>
+
+                    <!--Grid 1-->
+
+                    <div>
+                        <p style="color: white;">
+                            <img src="assets/images/smoke.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            Climate Change
+                        </h3>
+                        <p class="uk-margin-medium">
+                            A negative climate change <br>
+                            due in great part to the <br>
+                            release of gases expelled <br>
+                            from burning carbon products.
+                        </p>
+
+                    </div>
+
+                    <!--Grid 2-->
+                    <div>
+                        <p style="color: green;">
+                            <img src="assets/images/reforest.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            Reforestation
+                        </h3>
+                        <p class="uk-margin-medium">
+                            Reforestation is an attempt<br>
+                            to replenish trees being lost<br>
+                            due to both legal and illegal<br>
+                            reasons.
+                        </p>
+                    </div>
+
+                    <!--Grid 3-->
+                    <div>
+                        <p style="color: rgba(17, 46, 40, 1)">
+                            <img src="assets/images/engineering_forest.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            Effective Donations
+                        </h3>
+                        <p class="uk-margin-medium">
+                            Donations are for one reason<br>
+                            and one reason only - <br>
+                            To improve the current <br>
+                            state of our environment.
+                        </p>
+
+                    </div>
+                    <!--Space between 1st and 2nd row grid items on large devices. lazy hack lol-->
+                    <div class="uk-visible@m"><br></div>
+                    <div class="uk-visible@m"><br></div>
+                    <div class="uk-visible@m"><br></div>
+                    <div class="uk-visible@m"><br></div>
+                    <div class="uk-visible@m"><br></div>
+                    <div class="uk-visible@m"><br></div>
+
+
+                    <!--Grid 4-->
+                    <div>
+                        <p style="color: green;">
+                            <img src="assets/images/fund-access.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            Access to Funds
+                        </h3>
+                        <p class="uk-margin-medium">
+                            Genix is an initiative that<br>
+                            will provide funds to every legal<br>
+                            entity pursuing a cleaner and fresher <br>
+                            earth through planting trees.
+                        </p>
+                    </div>
+
+                    <!--Grid 5-->
+                    <div>
+                        <p style="color: green;">
+                            <img src="assets/images/zero-emission.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            CO<sub>2</sub> Matching
+                        </h3>
+                        <p class="uk-margin-medium">
+                            Companies and individuals alike will<br>
+                            be able to offset their CO<sub>2</sub> emmission<br>
+                            by a simple donation. Sleep better<br>
+                            knowing you're doing your own part.
+                        </p>
+                    </div>
+
+                    <!--Grid 6-->
+                    <div>
+                        <p>
+                            <img src="assets/images/transparency-2.svg" width="120" height="120" uk-svg>
+                        </p>
+                        <h3 style="color:brown">
+                            Transparency
+                        </h3>
+                        <p class="uk-margin-medium">
+                            Everyone will be able to check <br>
+                            exacty where their money is going.<br>
+                            Its the blockchain afterall, so <br>
+                            put on your serious faces and audit us!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div id="why-blockchain"
+        style="background-image: linear-gradient(to right bottom, #65e52c, #65e66a, #72e594, #8be2b3, #adddc9);"
+        class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div class="uk-section uk-text-center">
+            <div class="uk-section uk-container">
+                <h1 class="why-blockchain uk-heading-line uk-text-center"><span style="color: green !important;">Why
+                        Blockchain</span></h1>
+
+                <h3 id="why-blockchain-text" class="why-blockchain uk-text-center">The blockchain, a phenomenal
+                    technology built on the
+                    foundations of the internet is here to stay.
+                    Opportunities for life changing products and services abound on the blockchain, and one of those is
+                    finance.
+                    Not just any finance but peer-to-peer, borderless finance. Genix is taking advantage of the
+                    blockchain as it relates to
+                    finance, the immutability of entries and distributed storage capacities.
+                </h3>
+
+                <div>
+                    <br><br><br>
+                </div>
+                <div class="uk-grid-small uk-child-width-1-3@s uk-child-width-1-3@m" uk-grid>
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/verified-data.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Publicly Verifiable <br class="uk-hidden@m"> Data
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            As mentioned above, everything will <br>
+                            be public. The blockchain enhances this<br>
+                            by making sure anyone with even a<br>
+                            cellphobe can look up and verify transaction claims.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/hash.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Data <br class="uk-hidden@m"> Integrity
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            The veracity of blockchain data is one <br>
+                            of its strongest attractions. A lot of<br>
+                            techie stuff goes into making sure<br>
+                            nobody can just easily edit blockchain data.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/distribution.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Distributed <br class="uk-hidden@m"> Tree Data
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            The blockchain is simply distributed<br>
+                            storage and computing at its finest.<br>
+                            Data stored on the blockchain means <br>
+                            it can be accessed anywhere and isnt stored on a single device.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/cryptocurrency.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Masternode <br class="uk-hidden@m"> Fund Generation
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            The Genix team will set up and<br>
+                            operate a number of masternodes strictly<br>
+                            for the purpose of fund generation<br>
+                            toward donations for eligible tree-planting organizations
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/banknotes.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Quick and<br class="uk-hidden@m"> Easy donations
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            The blockchain is fast, and recently<br>
+                            the blockchain is getting better and<br>
+                            easier to use for even a novice. This<br>
+                            combo makes for a very fast and easy donation process
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/global-currency.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Cross Border<br class="uk-hidden@m"> Donations
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            This isn't limited to any country.<br>
+                            Transactions on the blockchain can<br>
+                            be carried out wherever there is an<br>
+                            internet connection. The entire world can participate.
+
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/transparency.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Financial<br class="uk-hidden@m"> Transparency
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            While donations in fiat can be hard<br>
+                            to monitor by the public, except the<br>
+                            bank account receiving the donations<br>
+                            is public, its the opposite with open source cryptographic solutions. Everybody knows!
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/envelope.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Fast, Easy<br class="uk-hidden@m"> Donation Remittance
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            Redistribution of donations received at Genix<br>
+                            is a primary concern. Traditional wire transfers <br>
+                            can be difficult to arrange and inconvenient. <br>
+                            The Genix ecosystem allows convenient, and publicly 
+                            recorded remittance to occur anywhere in the world and on a peer-to-peer basis.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="why-blockchain">
+                            <img src="assets/images/piggy-bank.svg" width="100" height="100" uk-svg>
+                        </p>
+                        <h4 class="why-blockchain">
+                            Near Zero<br class="uk-hidden@m"> Expenses
+                        </h4>
+                        <p class="why-blockchain uk-margin-medium">
+                            Receiving donations will be cheap.<br>
+                            Sending it to the different <br>
+                            organizations will be cheaper<br>
+                            considering the amount to fee ratio. <br>
+                            Fees won't stop anyone this time around
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="why-blockchain"
+        style="background-image: linear-gradient(to left bottom, #adddc9, #b4e4e0, #c5e9f1, #dbeefa, #eef4fd, #f5f7fe, #fbfbfe, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);"
+        class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div class="uk-section uk-text-center">
+            <div class="uk-section uk-container">
+                <h1 class="why-blockchain uk-heading-line uk-text-center"><span style="color: green !important;">Coin
+                        Info</span></h1>
+                <br>
+                <br>
+                <br>
+
+                <div class="uk-child-width-1-2 uk-grid-match uk-grid-collapse uk-text-center" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-default">
+                            <p class="uk-h5">Ticker</p>
+                            <p class="uk-h3">GENIX</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-muted">
+                            <p class="uk-h5">Algo</p>
+                            <p class="uk-h3">x16r</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-muted">
+                            <p class="uk-h5">Block Time</p>
+                            <p class="uk-h3">120 Seconds</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default">
+                            <p class="uk-h5">Max Supply</p>
+                            <p class="uk-h3">210,000,000 GENIX</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default">
+                            <p class="uk-h5">Premine</p>
+                            <p class="uk-h3">10,500,000 GENIX</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-muted">
+                            <p class="uk-h5">Community Airdrop</p>
+                            <p class="uk-h3">7,685,367 GENIX</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-muted">
+                            <p class="uk-h5">MN Collateral</p>
+                            <p class="uk-h3">10,000 GENIX</p>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="uk-tile uk-tile-default">
+                            <p class="uk-h5">Block Reward</p>
+                            <p class="uk-h3">500 GENIX. Halving Every 100,000 Blocks</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wallets" class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div class="uk-text-center">
+            <div class="uk-section uk-padding-remove-top uk-container">
+                <h1 class="why-blockchain uk-text-center"><span style="color: green !important;">Wallets</span></h1>
+
+                <br>
+                <br>
+                <div class="uk-child-width-1-4 uk-text-center" uk-grid>
+                    <div>
+                        <a href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-win-64.zip"><img
+                                src="assets/images/windows-logo.png" width="60%" uk-img></a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-osx-64.zip"><img
+                                src="assets/images/macos.png" height="50%" uk-img></a>
+                    </div>
+                    <div>
+                        <a
+                            href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-unix-64.tar.gz"><img
+                                src="assets/images/ubuntu.png" width="80%" uk-img></a>
+                    </div>
+                    <div>
+                        <a href="https://play.google.com/store/apps/details?id=com.genix"><img
+                                src="assets/images/android.png" height="50%" uk-img></a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="why-blockchain"
+        style="background-image: linear-gradient(to right, #6bd16f, #5bc164, #4cb159, #3ca14f, #2b9144, #1d8341, #0e753e, #00673a, #00573a, #004836, #00382f, #032926);"
+        class=" uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div class="uk-section uk-text-center">
+            <div class="uk-section uk-container">
+                <h1 class="why-blockchain uk-heading-line uk-text-center"><span
+                        style="color: white !important;">Official Genix Listings</span></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <ul uk-accordion>
+                    <li class="uk-open">
+                        <a class="uk-accordion-title uk-button uk-button-default uk-text-muted" href="#">Exchanges</a>
+                        <div class="uk-accordion-content">
+                            <div class=" uk-padding uk-child-width-1-2 uk-text-center" uk-grid>
+
+                                <div>
+                                    <a class="uk-visible@s" href="https://swiftex.co/trading/genix-btc"><img
+                                            src="https://cdn.discordapp.com/attachments/559188560058777651/562545236073775115/swiftex-light-1.png"
+                                            alt="Swiftex Exchange" width="40%" uk-img></a>
+                                    <a class="uk-hidden@s" href="https://swiftex.co/trading/genix-btc"><img
+                                            src="https://cdn.discordapp.com/attachments/559188560058777651/562545236073775115/swiftex-light-1.png"
+                                            alt="Swiftex Exchange" width="100%" uk-img></a>
+                                </div>
+                                
+                                <div>
+                                    <a class="uk-visible@s" href="https://cratex.io/index.php?pair=GENIX/BTC" target="_blank" class="uk-padding-remove footer-link">
+                                        <img src="assets/images/cratex.png" alt="Cratex Exchange" width ="40%" uk-img>
+                                    </a>
+                                    <a class="uk-hidden@s" href="https://cratex.io/index.php?pair=GENIX/BTC" target="_blank" class="uk-padding-remove footer-link">
+                                        <img src="assets/images/cratex.png" alt="Cratex Exchange" width ="100%" uk-img>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a href=https://twitter.com/GenixEcosystem/" class="uk-text-capitalize">
-                            Twitter
-                        </a>
+                        <a class="uk-accordion-title uk-button uk-button-default uk-text-muted" href="#">Masternode
+                            Hosting</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-padding uk-child-width-1-2 uk-text-center" uk-grid>
+                                <div>
+                                    <a class="uk-visible@s" href="https://mn.gtmcoin.io"><img
+                                            src="https://cdn.discordapp.com/attachments/559188560058777651/562634441525297153/Gentarium-02-cut.png"
+                                            alt="Gentarium Masternode Hosting" width="40%" uk-img></a>
+                                    <a class="uk-hidden@s" href="https://mn.gtmcoin.io"><img
+                                            src="https://cdn.discordapp.com/attachments/559188560058777651/562634441525297153/Gentarium-02-cut.png"
+                                            alt="Gentarium Masternode Hosting" width="100%" uk-img></a>
+                                </div>
+                                <div>
+                                    <a class="uk-visible@s" href="https://ihostmn.com/hostmn.php?coin=GENIX"><img
+                                            src="assets/images/ihostmn.png"
+                                            alt="Ihostmn Masternode Hosting & Sharing" width="40%" uk-img></a>
+                                    <a class="uk-hidden@s" href="https://ihostmn.com/hostmn.php?coin=GENIX"><img
+                                            src="assets/images/ihostmn.png"
+                                            alt="Ihostmn Masternode Hosting & Sharing" width="100%" uk-img></a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class=" uk-margin-small-top uk-first-column">
-                        <a href="https://blockcrushers.xyz" class="uk-text-capitalize" href="">
-                            Blockcrushers</a>
-                    </li>
-                    <li class=" uk-margin-small-top uk-first-column">
-                        <a href="privacypolicy.html" class="uk-text-capitalize" href="">
-                            Privacy Policy</a>
+                    <li>
+                        <a class="uk-accordion-title uk-button uk-button-default uk-text-muted" href="#">Coin
+                            Directory & Portfolio</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-padding uk-child-width-1-2 uk-text-center" uk-grid>
+
+                                <div>
+                                    <a class="uk-visible@s" href="https://www.coingecko.com/en/coins/genix"><img
+                                        src="assets/images/coingecko.png"
+                                        alt="Blockfolio Porfolio Tracker" width="40%" uk-img></a>
+                                <a class="uk-hidden@s" href="https://www.coingecko.com/en/coins/genix"><img
+                                        src="assets/images/coingecko.png"
+                                        alt="Blockfolio Porfolio Tracker" width="100%" uk-img></a>
+                                </div>
+                                
+                                <div>
+                                    <a class="uk-visible@s" href="https://blockfolio.com"><img
+                                        src="https://blockfolio.com/static/media/blockfolioLogoWhite.23b1be23.svg"
+                                        alt="Blockfolio Porfolio Tracker" width="40%" uk-svg></a>
+                                <a class="uk-hidden@s" href="https://blockfolio.com"><img
+                                        src="https://blockfolio.com/static/media/blockfolioLogoWhite.23b1be23.svg"
+                                        alt="Blockfolio Porfolio Tracker" width="100%" uk-svg></a>
+                                </div>
+                               
+
+                            </div>
+                        </div>
                     </li>
                 </ul>
 
             </div>
         </div>
-
-
     </div>
 
 
 
 
 
+
+    <div id="what-is-genix"
+        style="background-image: linear-gradient(to right bottom, #012c32, #003a3e, #004949, #055852, #16685a);"
+        class="uk-section-default tm-section-texture uk-grid-collapse uk-text-center">
+        <div style="padding-bottom: 0px;" class="uk-section uk-text-center">
+            <div style="padding-bottom: 20px;" class="uk-section uk-container">
+                <!--<button style="border-radius: 100%; width: 50px; height: 50px" class="uk-scroll uk-float-right uk-pos">^</button>-->
+                <div style="margin-left: 8%; margin-right: 5%; border-bottom: solid 3px turquoise; padding-bottom: 10% !important;"
+                    class="uk-grid-small uk-child-width-1-3 uk-child-width-1-6@m" uk-grid>
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            Social
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+                                <li>
+                                    <a href="https://twitter.com/GenixEcosystem" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://discord.gg/jqvxk2m" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Discord
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://t.me/Genixcx" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Telegram
+                                    </a>
+                                </li>
+                                <!--
+                                    ### To be updated when these social accounts become available  ###
+                                <li>
+                                    <a href="#" target="_blank" class="uk-padding-remove footer-link">
+                                        Medium
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="uk-padding-remove footer-link">
+                                        Steemit
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 2%;">
+                                    <a href="#" target="_blank" class="uk-padding-remove footer-link">
+                                        Youtube
+                                    </a>
+                                </li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            Genix Info
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+                                <li>
+                                    <a href="http://explorer.genix.cx" target="_blank" class="uk-padding-remove footer-link">
+                                        Block Explorer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/genix-project" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Github
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="assets/lightpaper.pdf" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Lightpaper
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="privacypolicy.html" target="_blank" class="uk-padding-remove footer-link">
+                                        Privacy Policy
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            Wallets
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+
+                                <li>
+                                    <a href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-win-64.zip"
+                                        target="_blank" class="uk-padding-remove footer-link">
+                                        Windows Wallet
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-osx-64.zip"
+                                        target="_blank" class="uk-padding-remove footer-link">
+                                        Mac Wallet
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/genix-project/genix/releases/download/v0.2.0.2/genix-unix-64.tar.gz"
+                                        target="_blank" class="uk-padding-remove footer-link">
+                                        Linux Wallet
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/apps/details?id=com.genix" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Android Mobile Wallet
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            People
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+                                <li>
+                                    <a href="https://twitter.com/CORS_1ER" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        CORS1ER - CEO
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/TwinkyCx" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Twinky - CTO
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/farsider350/" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Farsider - Lead Developer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/veryrichard" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Chinces - Web Developer
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 2%;">
+                                    <a href="#" target="_blank" class="uk-padding-remove footer-link">
+                                        Marinoff - Graphic Designer
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            Pools
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+                                <li>
+                                    <a href="https://blockcrushers.xyz/" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Blockcrushers [Official]
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://bitcointalk.org/index.php?topic=5119926.msg50136270#msg50136270" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Third Party Pools
+                                    </a>
+                                </li>
+                                
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class=" uk-text-left" style="color: turquoise">
+                            Listings
+                        </h4>
+                        <div>
+                            <ul class="uk-text-left uk-nav uk-nav-default">
+                                <li>
+                                    <a href="https://swiftex.co/trading/genix-btc" target="_blank" class="uk-padding-remove footer-link">
+                                        Swiftex Exchange
+                                    </a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="https://cratex.io/index.php?pair=GENIX/BTC" target="_blank" class="uk-padding-remove footer-link">
+                                        Cratex Exchange
+                                    </a>
+                                </li> -->
+                                <li>
+                                    <a href="https://mn.gtmcoin.io/" target="_blank"
+                                        class="uk-padding-remove footer-link">
+                                        Gentarium Node Host
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="uk-grid-small uk-child-width-1-1 uk-text-center">
+                    <div>
+                        <p> &copy; Genix 2018 - 2019</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div>Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
+    <div>Icons made by <a href="https://www.flaticon.com/authors/pongsakornred" title="pongsakornRed">pongsakornRed</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    -->
+
+
+    <!--Offcanvas Mobile Navigation-->
+    <div id="offcanvas" uk-offcanvas="mode: push; overlay: true;" class="uk-offcanvas">
+        <div style="background-image: linear-gradient(to right bottom, #012c32, #003a3e, #004949, #055852, #16685a);"
+            class="uk-offcanvas-bar">
+            <div>
+                <div>
+                    <ul class=" uk-nav uk-nav-default">
+                        <li>
+                            <a class="footer-link" uk-scroll href="#what-is-genix">About</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" uk-scroll href="#why-blockchain">Genix Blockchain</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#wallets">Wallets</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="assets/lightpaper.pdf">Lightpaper</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="http://explorer.genix.cx">Block Explorer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
-<script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("4 April 2019, 06:00:00").getTime();
-    
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get todays date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
-    
-      // If the count down is finished, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "Genix is Here!";
-      }
-    }, 1000);
-    </script>
+
 </html>
